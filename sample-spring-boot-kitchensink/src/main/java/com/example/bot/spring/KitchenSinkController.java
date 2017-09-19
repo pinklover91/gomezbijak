@@ -28,6 +28,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.function.Consumer;
+import java.util.concurrent.ThreadLocalRandom;
 
 import com.linecorp.bot.model.action.DatetimePickerAction;
 import com.linecorp.bot.model.message.template.*;
@@ -238,6 +239,7 @@ public class KitchenSinkController {
 
         log.info("Got text message from {}: {}", replyToken, text);
         switch (text) {
+            
             case "profile": {
                 String userId = event.getSource().getUserId();
                 if (userId != null) {
@@ -274,6 +276,18 @@ public class KitchenSinkController {
                 } else {
                     this.replyText(replyToken, "Bot can't leave from 1:1 chat");
                 }
+                break;
+            }
+            case "apakah": {
+                // ConfirmTemplate confirmTemplate = new ConfirmTemplate(
+                //         "Do it?",
+                //         new MessageAction("Yes", "Yes!"),
+                //         new MessageAction("No", "No!")
+                // );
+                // TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
+                string replyApakah[] = new string("ya", "nggak", "bener banget", "mungkin");
+                
+                this.replyText(replyToken, replyApakah[ThreadLocalRandom.current().nextInt(0, 5)]);
                 break;
             }
             case "confirm": {
