@@ -35,8 +35,8 @@ public class EchoApplication {
 
     @EventMapping
     public TextMessage handleTextMessageEvent(MessageEvent<TextMessageContent> event) {
-        System.out.println("event: " + event);
-         string replyApakah[] = new string[]("ya", "nggak", "bener banget", "mungkin");
+       // System.out.println("event: " + event);
+    //     string replyApakah[] = new string[]("ya", "nggak", "bener banget", "mungkin");
                 return new TextMessage("benerbangettttttt");
              //   this.replyText(replyToken, replyApakah[ThreadLocalRandom.current().nextInt(0, 5)]);
      //   return new TextMessage(event.getMessage().getText());
@@ -45,7 +45,7 @@ public class EchoApplication {
 
     @EventMapping
     public void handleDefaultMessageEvent(Event event) {
-        System.out.println("event: " + event);
+      //  System.out.println("event: " + event);
     }
     
     
