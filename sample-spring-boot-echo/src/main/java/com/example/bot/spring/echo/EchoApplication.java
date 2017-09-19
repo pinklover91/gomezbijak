@@ -38,7 +38,7 @@ public class EchoApplication {
         System.out.println("event: " + event);
          string replyApakah[] = new string("ya", "nggak", "bener banget", "mungkin");
                 
-                this.replyText(replyToken, replyApakah[ThreadLocalRandom.current().nextInt(0, 5)]);
+             //   this.replyText(replyToken, replyApakah[ThreadLocalRandom.current().nextInt(0, 5)]);
      //   return new TextMessage(event.getMessage().getText());
         return new TextMessage(replyApakah[ThreadLocalRandom.current().nextInt(0, 5)]);
     }
